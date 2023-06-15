@@ -13,6 +13,7 @@ import {
   Stack,
   Text
 } from "@chakra-ui/react";
+import {Link} from "react-router-dom";
 
 const List = () => {
   const [listCredentials, setListCredentials] = useState([]);
@@ -29,7 +30,7 @@ const List = () => {
 
   useEffect(() => {
     GetListCredentials().then();
-  }, []);
+  }, [GetListCredentials]);
 
   const HandleDeleteCredential = useCallback(async (id) => {
     try {
@@ -41,7 +42,7 @@ const List = () => {
     } catch (e) {
       console.log(e);
     }
-  }, []);
+  }, [GetListCredentials]);
 
   return (
     <>
@@ -50,9 +51,9 @@ const List = () => {
           <Heading size='md'>Password Manager</Heading>
         </Box>
         <Spacer />
-        <ButtonGroup gap='2'>
+        <Link to="/credentials/upsert">
           <Button colorScheme='teal'>Add</Button>
-        </ButtonGroup>
+        </Link>
       </Flex>
       <Flex gap='3'>
         {listCredentials && listCredentials.map((val, index) => (
@@ -68,9 +69,14 @@ const List = () => {
             <Divider />
             <CardFooter>
               <ButtonGroup spacing='2'>
-                <Button variant='solid' colorScheme='blue'>
-                  Edit
-                </Button>
+                <Link to={`/credentials/upsert/${val?.id}`}>
+                  <Button
+                    variant='solid'
+                    colorScheme='blue'
+                  >
+                    Edit
+                  </Button>
+                </Link>
                 <Button
                   variant='ghost'
                   colorScheme='blue'

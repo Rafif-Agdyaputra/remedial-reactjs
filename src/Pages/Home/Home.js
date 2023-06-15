@@ -1,7 +1,13 @@
+import {Link} from "react-router-dom";
+import {Button} from "@chakra-ui/react";
 
 const Home = () => {
   return (
-    <h1>Home Component</h1>
+    <Link to="/credentials">
+      <Button variant='solid' colorScheme='blue'>
+        Mulai
+      </Button>
+    </Link>
   );
 };
 
