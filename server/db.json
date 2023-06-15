@@ -1,3 +1,18 @@
 {
-  "credentials": []
+  "credentials": [
+    {
+      "id": 1,
+      "name": "xyz",
+      "url": "http://testweb.xyz",
+      "username": "rafif",
+      "password": "123"
+    },
+    {
+      "id": 2,
+      "name": "abc",
+      "url": "http://testweb.abc",
+      "username": "agdyaputra",
+      "password": "321"
+    }
+  ]
 }
