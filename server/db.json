@@ -1,3 +1,11 @@
 {
-  "credentials": []
+  "credentials": [
+    {
+      "id": 1,
+      "name": "xyz",
+      "url": "http://testweb.xyz",
+      "username": "rafif",
+      "password": "123"
+    }
+  ]
 }
